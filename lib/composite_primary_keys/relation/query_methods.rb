@@ -5,6 +5,7 @@ module CompositePrimaryKeys::ActiveRecord::QueryMethods
     # order_query = ["#{quoted_table_name}.#{quoted_primary_key} ASC"] if order_query.empty?
 
     # break apart CPKs
+
     order_query = primary_key.map do |key|
       "#{quoted_table_name}.#{connection.quote_column_name(key)} ASC"
     end if order_query.empty?
