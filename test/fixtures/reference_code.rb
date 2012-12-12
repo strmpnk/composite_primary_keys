@@ -4,6 +4,4 @@ class ReferenceCode < ActiveRecord::Base
   belongs_to :reference_type, :foreign_key => "reference_type_id"
 
   validates_presence_of :reference_code, :code_label, :abbreviation
-
-  default_scope order(:sort_order)
 end

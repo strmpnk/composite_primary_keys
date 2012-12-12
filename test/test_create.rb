@@ -12,7 +12,7 @@ class TestCreate < ActiveSupport::TestCase
     :dual   => {
       :class => ReferenceCode,
       :primary_keys => [:reference_type_id, :reference_code],
-      :create => {:reference_type_id => 1, :reference_code => 20, :code_label => 'NEW_CODE', :abbreviation => 'New Code', :sort_order => 42}
+      :create => {:reference_type_id => 1, :reference_code => 20, :code_label => 'NEW_CODE', :abbreviation => 'New Code'}
     }
   }
 
@@ -57,7 +57,7 @@ class TestCreate < ActiveSupport::TestCase
 
   def test_create_on_association_when_belongs_to_is_single_key
     rt = ReferenceType.find(:first)
-    rt.reference_codes.create(:reference_code => 4321, :code_label => 'foo', :abbreviation => 'bar', :sort_order => 42)
+    rt.reference_codes.create(:reference_code => 4321, :code_label => 'foo', :abbreviation => 'bar')
     rc = ReferenceCode.find_by_reference_code(4321)
     assert_equal(rc.reference_type_id, rt.reference_type_id)
   end
