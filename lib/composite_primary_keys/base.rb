@@ -83,10 +83,6 @@ module ActiveRecord
       super
     end
 
-    def _field_changed?(*args)
-      field_changed?(*args)
-    end
-
     module CompositeClassMethods
       def primary_key
         primary_keys
@@ -158,9 +154,6 @@ module ActiveRecord
         persisted? ? to_key.join(CompositePrimaryKeys::ID_SEP) : nil
       end
 
-      def _field_changed?(*args)
-        field_changed?(*args)
-      end
     end
   end
 end
