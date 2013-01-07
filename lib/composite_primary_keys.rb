@@ -26,7 +26,7 @@ $:.unshift(File.dirname(__FILE__)) unless
 
 unless defined?(ActiveRecord)
   require 'rubygems'
-  gem 'activerecord', '3.2.8'
+  gem 'activerecord', '3.2.9'
   require 'active_record'
 end
 
